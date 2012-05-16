@@ -1,0 +1,333 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Manatee.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Manatee.ico"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,0,0
+ PRODUCTVERSION 1,1,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "7k\0"
+            VALUE "FileDescription", "Simple Music Player\0"
+            VALUE "FileVersion", "1, 1, 0, 0\0"
+            VALUE "InternalName", "Manatee\0"
+            VALUE "LegalCopyright", "Copyright (C) 2012\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Manatee.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Manatee\0"
+            VALUE "ProductVersion", "1, 1, 0, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR ACCELERATORS DISCARDABLE 
+BEGIN
+    VK_LEFT,        IDC_BTN_PREV,           VIRTKEY, CONTROL, NOINVERT
+    VK_RIGHT,       IDC_BTN_NEXT,           VIRTKEY, CONTROL, NOINVERT
+    VK_SPACE,       IDC_BTN_PLAY,           VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 24
+//
+
+1                       24      MOVEABLE PURE   "Manatee.manifest"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_CDCOVER             BITMAP  DISCARDABLE     "res\\cd.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 191, 60
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 8, "Tahoma"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,13,21,20
+    LTEXT           "Manatee v1.1",IDC_STATIC,40,11,55,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2012. 7k",IDC_STATIC,40,22,74,8
+    DEFPUSHBUTTON   "OK",IDOK,153,7,31,14,WS_GROUP
+    LTEXT           "A simple music player using libZPlay v2.02 by Zoran Cindori.",
+                    IDC_STATIC,40,34,144,18
+END
+
+IDD_MANATEE DIALOGEX 0, 0, 272, 105
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_ACCEPTFILES | WS_EX_CONTROLPARENT | WS_EX_APPWINDOW
+CAPTION "Manatee"
+FONT 8, "Tahoma"
+BEGIN
+    CONTROL         130,IDC_STATIC,"Static",SS_BITMAP,7,6,20,20
+    CONTROL         "",IDC_STT_TRACKNAME,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_NOTIFY | WS_GROUP,79,7,155,8
+    LTEXT           "",IDC_STT_INFO,79,16,155,35
+    LTEXT           "",IDC_STT_BITRATE,79,48,67,8
+    LTEXT           "Normal",IDC_STT_PLAYMODE,79,60,45,8
+    LTEXT           "00:00.00",IDC_STT_CURTIME,138,60,30,8
+    LTEXT           "/",IDC_STATIC,171,60,8,8
+    LTEXT           "00:00.00",IDC_STT_TOTALTIME,179,60,30,8
+    CONTROL         "Slider1",IDC_SLD_TIME,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,0,69,215,15
+    CONTROL         "Vol",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,
+                    215,72,10,8
+    CONTROL         "Slider1",IDC_SLD_VOLUME,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,224,69,47,15
+    PUSHBUTTON      "Play&List",IDC_BTN_SHOWPLAYLIST,5,87,33,14
+    PUSHBUTTON      "Pre&v",IDC_BTN_PREV,67,87,26,14
+    LTEXT           "|",IDC_STATIC,97,89,8,8
+    PUSHBUTTON      "&Play",IDC_BTN_PLAY,104,87,26,14
+    LTEXT           "|",IDC_STATIC,134,89,8,8
+    PUSHBUTTON      "&Stop",IDC_BTN_STOP,141,87,26,14
+    LTEXT           "|",IDC_STATIC,171,89,8,8
+    PUSHBUTTON      "&Next",IDC_BTN_NEXT,178,87,26,14
+    PUSHBUTTON      "&EQ",IDC_BTN_SHOWEQ,223,87,18,14
+    PUSHBUTTON      "L&yric",IDC_BTN_SHOWLYRIC,244,87,22,14
+    PUSHBUTTON      "&Help",IDC_BTN_HELP,241,4,25,14
+END
+
+IDD_PLAYLIST DIALOGEX 0, 0, 272, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_ACCEPTFILES | WS_EX_CONTROLPARENT
+CAPTION "PlayList"
+FONT 8, "Tahoma", 0, 0, 0x1
+BEGIN
+    CONTROL         "List2",IDC_LST_PLAYLIST,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,6,4,259,121
+    PUSHBUTTON      "&Open",IDC_BTN_OPEN,5,130,28,14
+    PUSHBUTTON      "&Add...",IDC_BTN_ADD,37,130,28,14
+    PUSHBUTTON      "&Mode",IDC_BTN_PLAYMODE,69,130,28,14
+END
+
+IDD_LYRIC DIALOG DISCARDABLE  0, 0, 230, 105
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Lyric"
+FONT 8, "Tahoma"
+BEGIN
+END
+
+IDD_FILEID3 DIALOG DISCARDABLE  0, 0, 197, 179
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ID3 Tag"
+FONT 8, "Tahoma"
+BEGIN
+    CONTROL         "List1",IDC_LST_ATTRIB,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,7,7,183,164
+END
+
+IDD_EQUALIZER DIALOG DISCARDABLE  0, 0, 285, 105
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Equalizer"
+FONT 8, "Tahoma"
+BEGIN
+    CONTROL         "&Enable",IDC_CHK_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,6,37,10
+    PUSHBUTTON      "&Reset",IDC_BTN_RESET,55,5,32,12
+    CONTROL         "Slider11",IDC_SLIDER0,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_VERT | TBS_BOTH | WS_TABSTOP,1,18,23,75
+    LTEXT           "+12dB",IDC_STATIC,26,22,22,8
+    LTEXT           " +0dB",IDC_STATIC,27,51,22,8
+    LTEXT           " -12dB",IDC_STATIC,26,80,22,8
+    CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_VERT | TBS_BOTH | WS_TABSTOP,47,18,23,75
+    CONTROL         "Slider1",IDC_SLIDER2,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_VERT | TBS_BOTH | WS_TABSTOP,70,18,23,75
+    CONTROL         "Slider1",IDC_SLIDER3,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_VERT | TBS_BOTH | WS_TABSTOP,93,18,23,75
+    CONTROL         "Slider1",IDC_SLIDER4,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_VERT | TBS_BOTH | WS_TABSTOP,116,18,23,75
+    CONTROL         "Slider1",IDC_SLIDER5,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_VERT | TBS_BOTH | WS_TABSTOP,139,18,23,75
+    CONTROL         "Slider1",IDC_SLIDER6,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_VERT | TBS_BOTH | WS_TABSTOP,162,18,23,75
+    CONTROL         "Slider1",IDC_SLIDER7,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_VERT | TBS_BOTH | WS_TABSTOP,185,18,23,75
+    CONTROL         "Slider1",IDC_SLIDER8,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_VERT | TBS_BOTH | WS_TABSTOP,208,18,23,75
+    CONTROL         "Slider1",IDC_SLIDER9,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_VERT | TBS_BOTH | WS_TABSTOP,231,18,23,75
+    CONTROL         "Slider1",IDC_SLIDER10,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_VERT | TBS_BOTH | WS_TABSTOP,254,18,23,75
+    LTEXT           "Preamp",IDC_STATIC,3,91,25,8
+    LTEXT           "60",IDC_STATIC,55,91,9,8
+    LTEXT           "170",IDC_STATIC,75,91,13,8
+    LTEXT           "310",IDC_STATIC,99,91,13,8
+    LTEXT           "600",IDC_STATIC,122,91,13,8
+    LTEXT           "1K",IDC_STATIC,147,91,9,8
+    LTEXT           "3K",IDC_STATIC,169,91,9,8
+    LTEXT           "6K",IDC_STATIC,192,91,9,8
+    LTEXT           "10K",IDC_STATIC,213,91,13,8
+    LTEXT           "14K",IDC_STATIC,236,91,13,8
+    LTEXT           "18K",IDC_STATIC,260,91,13,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 184
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 52
+    END
+
+    IDD_MANATEE, DIALOG
+    BEGIN
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 101
+    END
+
+    IDD_LYRIC, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 104
+    END
+
+    IDD_FILEID3, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 178
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Manatee.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
