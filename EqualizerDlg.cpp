@@ -17,10 +17,10 @@ static char THIS_FILE[] = __FILE__;
 
 
 CEqualizerDlg::CEqualizerDlg(CWnd* pParent /*=NULL*/)
-	: CDialog(CEqualizerDlg::IDD, pParent)
+  : CDialog(CEqualizerDlg::IDD, pParent)
 {
-	//{{AFX_DATA_INIT(CEqualizerDlg)
-	m_Slider0 = 50;
+  //{{AFX_DATA_INIT(CEqualizerDlg)
+  m_Slider0 = 50;
   m_Slider1 = 50;
   m_Slider2 = 50;
   m_Slider3 = 50;
@@ -31,16 +31,16 @@ CEqualizerDlg::CEqualizerDlg(CWnd* pParent /*=NULL*/)
   m_Slider8 = 50;
   m_Slider9 = 50;
   m_Slider10 = 50;
-	//}}AFX_DATA_INIT
+  //}}AFX_DATA_INIT
   m_pManateeDlg = (CManateeDlg *)pParent;
 }
 
 
 void CEqualizerDlg::DoDataExchange(CDataExchange* pDX)
 {
-	CDialog::DoDataExchange(pDX);
-	//{{AFX_DATA_MAP(CEqualizerDlg)
-	DDX_Slider(pDX, IDC_SLIDER0, m_Slider0);
+  CDialog::DoDataExchange(pDX);
+  //{{AFX_DATA_MAP(CEqualizerDlg)
+  DDX_Slider(pDX, IDC_SLIDER0, m_Slider0);
   DDX_Slider(pDX, IDC_SLIDER1, m_Slider1);
   DDX_Slider(pDX, IDC_SLIDER2, m_Slider2);
   DDX_Slider(pDX, IDC_SLIDER3, m_Slider3);
@@ -51,7 +51,7 @@ void CEqualizerDlg::DoDataExchange(CDataExchange* pDX)
   DDX_Slider(pDX, IDC_SLIDER8, m_Slider8);
   DDX_Slider(pDX, IDC_SLIDER9, m_Slider9);
   DDX_Slider(pDX, IDC_SLIDER10, m_Slider10);
-	//}}AFX_DATA_MAP
+  //}}AFX_DATA_MAP
 
   int eq_values[10];
   eq_values[0] = (50 - m_Slider1)*240;
@@ -69,14 +69,14 @@ void CEqualizerDlg::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(CEqualizerDlg, CDialog)
-	//{{AFX_MSG_MAP(CEqualizerDlg)
+  //{{AFX_MSG_MAP(CEqualizerDlg)
   ON_WM_DESTROY()
-	ON_WM_MOVE()
-	ON_BN_CLICKED(IDC_BTN_RESET, OnBtnReset)
-	ON_BN_CLICKED(IDC_CHK_ENABLE, OnChkEnable)
-	ON_WM_VSCROLL()
+  ON_WM_MOVE()
+  ON_BN_CLICKED(IDC_BTN_RESET, OnBtnReset)
+  ON_BN_CLICKED(IDC_CHK_ENABLE, OnChkEnable)
+  ON_WM_VSCROLL()
   ON_WM_SYSCOMMAND()
-	//}}AFX_MSG_MAP
+  //}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -84,10 +84,10 @@ END_MESSAGE_MAP()
 
 BOOL CEqualizerDlg::OnInitDialog() 
 {
-	CDialog::OnInitDialog();
-	
-	//Initial
-	m_Attached = LEFT;
+  CDialog::OnInitDialog();
+  
+  //Initial
+  m_Attached = LEFT;
   m_bEnable = FALSE;
 
   //band0:0-120       60
@@ -104,23 +104,23 @@ BOOL CEqualizerDlg::OnInitDialog()
   int FreqPoint[9] = {120, 220, 400, 800, 1200, 4800, 7200, 12800, 15200};
 
   m_pManateeDlg->m_Player->SetEqualizerPoints(FreqPoint, 9);
-	return TRUE;  // return TRUE unless you set the focus to a control
-	              // EXCEPTION: OCX Property Pages should return FALSE
+  return TRUE;  // return TRUE unless you set the focus to a control
+                // EXCEPTION: OCX Property Pages should return FALSE
 }
 
 void CEqualizerDlg::OnDestroy() 
 {
-	CDialog::OnDestroy();
+  CDialog::OnDestroy();
 }
 
 void CEqualizerDlg::OnCancel() 
 {
-	DestroyWindow();
+  DestroyWindow();
 }
 
 void CEqualizerDlg::PostNcDestroy() 
 {
-	CDialog::PostNcDestroy();
+  CDialog::PostNcDestroy();
   delete this;
 }
 
@@ -156,8 +156,8 @@ void CEqualizerDlg::AttachWindow()
 
 void CEqualizerDlg::OnMove(int x, int y) 
 {
-	CDialog::OnMove(x, y);
-	
+  CDialog::OnMove(x, y);
+  
   RECT rectParent;
   RECT rect;
   m_pManateeDlg->GetWindowRect(&rectParent);
@@ -186,12 +186,12 @@ void CEqualizerDlg::OnMove(int x, int y)
     m_Attached = TOP;
     AttachWindow();
   }
-  else m_Attached = NONE;	
+  else m_Attached = NONE;  
 }
 
 void CEqualizerDlg::OnBtnReset() 
 {
-	m_Slider0 = 50;
+  m_Slider0 = 50;
   m_Slider1 = 50;
   m_Slider2 = 50;
   m_Slider3 = 50;
@@ -221,8 +221,8 @@ void CEqualizerDlg::OnChkEnable()
 
 void CEqualizerDlg::OnVScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar) 
 {
-	UpdateData(TRUE);
-	CDialog::OnVScroll(nSBCode, nPos, pScrollBar);
+  UpdateData(TRUE);
+  CDialog::OnVScroll(nSBCode, nPos, pScrollBar);
 }
 
 void CEqualizerDlg::OnSysCommand(UINT nID, LPARAM lParam)
@@ -243,6 +243,6 @@ BOOL CEqualizerDlg::PreTranslateMessage(MSG* pMsg)
     ShowWindow(SW_HIDE);
     m_pManateeDlg->m_bEqualizerShow = FALSE;
     return TRUE;
-  }	
-	else return CDialog::PreTranslateMessage(pMsg);
+  }  
+  else return CDialog::PreTranslateMessage(pMsg);
 }
