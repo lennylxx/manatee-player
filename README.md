@@ -1,7 +1,7 @@
 # manatee-player
 A simple music player, migrated from google code.
 
-* Decoder comes form [libZPlay] by Zoran Cindori.
+* Decoder comes from [libZPlay] by Zoran Cindori.
 * Icon comes from [bluebison.net].
 
 ![screenshot](https://github.com/lennylxx/manatee-player/blob/raw/screenshot.png)
